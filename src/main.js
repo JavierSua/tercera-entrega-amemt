@@ -3,6 +3,8 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import Vuex from 'vuex';
+
 
 import {library} from '@fortawesome/fontawesome-svg-core'
 import {fas} from '@fortawesome/free-solid-svg-icons'
@@ -15,6 +17,7 @@ library.add(far);
 library.add(faFacebook)
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.component('font-awesome-layers', FontAwesomeLayers);
+Vue.use(Vuex);
 
 Vue.config.productionTip = false
 
