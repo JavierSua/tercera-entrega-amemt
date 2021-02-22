@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
+    <Carrusel></Carrusel>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <TablaDinamica @toggleEditModal="toggleEditModal"></TablaDinamica>
       <button type="button" class="btn btn-primary btnTablaAgregar" @click="toggleModal">
@@ -79,6 +80,7 @@
 
 <script>
 // @ is an alias to /src
+import Carrusel from '@/components/Carrusel.vue'
 import HelloWorld from '@/components/HelloWorld.vue'
 import TablaDinamica from '@/components/TablaDinamica.vue'
 import Modal from '@/components/Modal.vue'
@@ -87,6 +89,7 @@ import { mapGetters } from "vuex";
 export default {
   name: 'Home',
   components: {
+    Carrusel,
     HelloWorld,
     TablaDinamica,
     Modal
