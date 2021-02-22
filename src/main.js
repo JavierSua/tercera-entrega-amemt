@@ -10,11 +10,11 @@ import {library} from '@fortawesome/fontawesome-svg-core'
 import {fas} from '@fortawesome/free-solid-svg-icons'
 import {far} from '@fortawesome/free-regular-svg-icons'
 import {FontAwesomeIcon, FontAwesomeLayers} from '@fortawesome/vue-fontawesome' 
-import { faFacebook } from '@fortawesome/free-brands-svg-icons'
+import { faFacebookSquare, faTwitterSquare, faInstagramSquare, faPinterestSquare } from '@fortawesome/free-brands-svg-icons'
 
 library.add(fas);
 library.add(far);
-library.add(faFacebook)
+library.add(faFacebookSquare, faTwitterSquare, faInstagramSquare, faPinterestSquare)
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.component('font-awesome-layers', FontAwesomeLayers);
 Vue.use(Vuex);
