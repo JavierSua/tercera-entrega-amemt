@@ -5,7 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    plantas: [],
+    plantasArray: [],
     modalOpen:false,
     editModalOpen:false,
     rowToEdit: "",
@@ -14,8 +14,11 @@ export default new Vuex.Store({
   },
   getters:{
     plantas(state){
-      return state.plantas
-    }
+      return state.plantasArray
+    },
+    filteredPlantas: (state) => (col, input) =>{
+      return state.plantasArray.filter(planta => planta[col]===input)
+    },
   },
   actions: {
   },

@@ -124,12 +124,12 @@ export default {
             Fruta: this.tempForm.Fruta,
             Hojas: this.tempForm.Hojas,
             }
-        this.$store.state.plantas.push(newPlanta)
+        this.$store.state.plantasArray.push(newPlanta)
     this.toggleModal()
     this.tempForm = this.blankForm
     },
     editPlanta(){
-      this.$store.state.plantas.splice(this.$store.state.rowToEdit, 1, this.tempForm)
+      this.$store.state.plantasArray.splice(this.$store.state.rowToEdit, 1, this.tempForm)
       this.toggleEditModal()
     }
   },
