@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<nav class="navbar navbar-dark bg-dark">
-			<a class="navbar-brand mx-auto" href="index.html">Naturaleza 
+			<a class="navbar-brand mx-auto" href="index.html"><router-link to="/">Naturaleza</router-link> 
 				<span class="fa-2x">
 					<font-awesome-layers class="fa-lg fa-fw">
 						<font-awesome-icon :icon="['far','circle']" />
@@ -22,7 +22,7 @@
 					<ul class="navbar-nav">
 						<li class="nav-item btn active">
 							<!--<a class="nav-link" href="index.html">Plantas</a> -->
-							<router-link to="/Plantas">Plantas</router-link>
+							<router-link to="/">Plantas</router-link>
 						</li>
 						<li class="nav-item btn">
 							<router-link to="/Animales">Animales</router-link>
@@ -31,7 +31,7 @@
 							<router-link to="/Insectos">Insectos</router-link>
 						</li>
 						<li class="nav-item btn">
-							<a class="nav-link" href="paginas/unfinished.html">Link</a>
+							<router-link to="/Link">Link</router-link>
 						</li>
 						
 					</ul>
