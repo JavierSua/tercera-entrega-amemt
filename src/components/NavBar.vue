@@ -20,18 +20,18 @@
 				
 				<div class="collapse navbar-collapse text-center" id="navbarNav">
 					<ul class="navbar-nav">
-						<li class="nav-item btn active">
+						<li>
 							<!--<a class="nav-link" href="index.html">Plantas</a> -->
-							<router-link to="/">Plantas</router-link>
+							<router-link to="/" class="btn anchor">Plantas</router-link>
 						</li>
-						<li class="nav-item btn">
-							<router-link to="/Animales">Animales</router-link>
+						<li>
+							<router-link to="/Animales" class="btn anchor">Animales</router-link>
 						</li>
-						<li class="nav-item btn">
-							<router-link to="/Insectos">Insectos</router-link>
+						<li>
+							<router-link to="/Insectos" class="btn anchor">Insectos</router-link>
 						</li>
-						<li class="nav-item btn">
-							<router-link to="/Link">Link</router-link>
+						<li>
+							<router-link to="/Link" class="btn anchor">Link</router-link>
 						</li>
 						
 					</ul>
@@ -46,6 +46,8 @@ export default {
 	
 }
 </script>
-<style lang="">
-	
+<style>
+.anchor{
+    color:#7ad66880;
+}
 </style>
