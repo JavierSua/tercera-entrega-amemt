@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<nav class="navbar navbar-dark bg-dark">
-			<a class="navbar-brand mx-auto" href="index.html">Naturaleza 
+			<a class="navbar-brand mx-auto" href="index.html"><router-link to="/">Naturaleza</router-link> 
 				<span class="fa-2x">
 					<font-awesome-layers class="fa-lg fa-fw">
 						<font-awesome-icon :icon="['far','circle']" />
@@ -20,18 +20,18 @@
 				
 				<div class="collapse navbar-collapse text-center" id="navbarNav">
 					<ul class="navbar-nav">
-						<li class="nav-item btn active">
+						<li>
 							<!--<a class="nav-link" href="index.html">Plantas</a> -->
-							<router-link to="/Plantas">Plantas</router-link>
+							<router-link to="/" class="btn anchor">Plantas</router-link>
 						</li>
-						<li class="nav-item btn">
-							<router-link to="/Animales">Animales</router-link>
+						<li>
+							<router-link to="/Animales" class="btn anchor">Animales</router-link>
 						</li>
-						<li class="nav-item btn">
-							<router-link to="/Insectos">Insectos</router-link>
+						<li>
+							<router-link to="/Insectos" class="btn anchor">Insectos</router-link>
 						</li>
-						<li class="nav-item btn">
-							<a class="nav-link" href="paginas/unfinished.html">Link</a>
+						<li>
+							<router-link to="/Link" class="btn anchor">Link</router-link>
 						</li>
 						
 					</ul>
@@ -46,6 +46,8 @@ export default {
 	
 }
 </script>
-<style lang="">
-	
+<style>
+.anchor{
+    color:#7ad66880;
+}
 </style>
