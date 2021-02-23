@@ -21,13 +21,14 @@
 				<div class="collapse navbar-collapse text-center" id="navbarNav">
 					<ul class="navbar-nav">
 						<li class="nav-item btn active">
-							<a class="nav-link" href="index.html">Plantas</a>
+							<!--<a class="nav-link" href="index.html">Plantas</a> -->
+							<router-link to="/Plantas">Plantas</router-link>
 						</li>
 						<li class="nav-item btn">
-							<a class="nav-link" href="paginas/animales/animales.html">Animales</a>
+							<router-link to="/Animales">Animales</router-link>
 						</li>
 						<li class="nav-item btn">
-							<a class="nav-link" href="paginas/insectos/insectos.html">Insectos</a>
+							<router-link to="/Insectos">Insectos</router-link>
 						</li>
 						<li class="nav-item btn">
 							<a class="nav-link" href="paginas/unfinished.html">Link</a>
@@ -40,6 +41,7 @@
 	</div>
 </template>
 <script>
+
 export default {
 	
 }

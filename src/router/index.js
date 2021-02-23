@@ -1,6 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Plantas from '../views/Plantas.vue'
+import Animales from '../views/Animales.vue'
+import Insectos from '../views/Insectos.vue'
+import Link from '../views/Link.vue'
 
 Vue.use(VueRouter)
 
@@ -17,7 +21,28 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+  }, 
+  {
+    path: '/Plantas',
+    name: 'Plantas',
+    component: Plantas
+  },
+ {
+  path: '/Animales',
+  name: 'Animales',
+  component: Animales
+ },
+ {
+   path: '/Insectos',
+   name: 'Insectos',
+   component: Insectos
+  },
+  {
+    path: '/Link',
+    name: 'Link',
+    component: Link
+   },
+  
 ]
 
 const router = new VueRouter({
