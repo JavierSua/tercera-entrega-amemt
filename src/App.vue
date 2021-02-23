@@ -4,14 +4,17 @@
     <!--  <router-link to="/about">About</router-link>  -->
     <NavBar></NavBar>
     <router-view/>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
 import NavBar from './components/NavBar'
+import Footer from './components/Footer'
 export default {
   components: {
-    NavBar
+    NavBar,
+    Footer
   }
 }
 </script>
@@ -36,5 +39,8 @@ export default {
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+.carousel-caption{
+    background-color: rgb(0, 0, 0, 0.7)
 }
 </style>
