@@ -1,11 +1,11 @@
 <template>
 	<div>
 		<nav class="navbar navbar-dark bg-dark">
-			<a class="navbar-brand mx-auto" href="index.html"><router-link to="/">Naturaleza</router-link> 
+			<a class="navbar-brand mx-auto"><router-link to="/" class="navbar-brand">Naturaleza</router-link> 
 				<span class="fa-2x">
-					<font-awesome-layers class="fa-lg fa-fw">
-						<font-awesome-icon :icon="['far','circle']" />
-						<font-awesome-icon icon="seedling" transform="shrink-8" />
+					<font-awesome-layers class=" fa-fw " >
+						<font-awesome-icon :icon="['far','circle']" style="color: #3d6b34;" size="2x"/>
+						<font-awesome-icon icon="seedling" transform="shrink-8" size="2x"  />
 					</font-awesome-layers>
 				</span> 
 			</a> 
@@ -22,16 +22,16 @@
 					<ul class="navbar-nav">
 						<li>
 							<!--<a class="nav-link" href="index.html">Plantas</a> -->
-							<router-link to="/" class="btn anchor">Plantas</router-link>
+							<router-link to="/" class="btn nav-link">Plantas</router-link>
 						</li>
 						<li>
-							<router-link to="/Animales" class="btn anchor">Animales</router-link>
+							<router-link to="/Animales" class="btn nav-link">Animales</router-link>
 						</li>
 						<li>
-							<router-link to="/Insectos" class="btn anchor">Insectos</router-link>
+							<router-link to="/Insectos" class="btn nav-link">Insectos</router-link>
 						</li>
 						<li>
-							<router-link to="/Link" class="btn anchor">Link</router-link>
+							<router-link to="/Link" class="btn nav-link">Link</router-link>
 						</li>
 						
 					</ul>

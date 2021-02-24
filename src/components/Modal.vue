@@ -6,19 +6,19 @@
 					<slot name="modal-header"></slot>
 				</div>
 				<slot name="form"></slot>
-				<div class="progress">
-					<div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-				</div>
+				<b-progress :value="this.progressValue" :max="max" ></b-progress>	
 			</div>
 		</div>
 	</div>
 </template>
 <script>
+import { mapGetters } from "vuex";
 
 export default {
+	computed: mapGetters(['progressValue']),
 	data(){
 		return {
-
+			max: 100
 		}
 	},
 	methods: {

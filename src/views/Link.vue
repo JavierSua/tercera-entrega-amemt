@@ -1,34 +1,16 @@
 <template>
-
-<div>  
-<!-- Cuerpo de texto -->
-    
     <div class="container rounded">
-        <div class="container rounded">
-
-            <div class="card btn-wrn">
-         <!--       <img class="card-img-top undr-cstr" src="../style/img/under-construction.png" alt="under-construction"> -->
-                <div class="card-body">
-                    <h4 class="card-title">Ups...</h4>
-                    <p class="card-text">Disculpe las molestias</p>
-                    <a href="../index.html" class="btn-primary stretched-link"></a>
-                </div>
-            </div>
-
-        </div>
+            <SorryBtn></SorryBtn>
     </div>
-
-    <div class="background-filter">
-        <!-- esto es un fitro para que la imagen de fondo no se vea tan brillante. -->
-    </div>
-    
-</div>
 
 </template>
 
 <script>
+import SorryBtn from '@/components/SorryBtn.vue'
 export default {
-    
+    components: {
+        SorryBtn
+    }
 }
 </script>
 
