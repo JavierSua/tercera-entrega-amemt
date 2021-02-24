@@ -43,4 +43,5 @@ export default {
 .carousel-caption{
     background-color: rgb(0, 0, 0, 0.7)
 }
+
 </style>

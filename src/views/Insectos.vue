@@ -1,37 +1,29 @@
 <template>
-
-<div> <!-- Cuerpo de texto -->
-    
-    <div class="container rounded">
+    <div class="insectos">
         <div class="container rounded">
-
-            <div class="card btn-wrn">
-          <!--      <img class="card-img-top undr-cstr" src="../../style/img/under-construction.png" alt="under-construction"> -->
-              <v-img src="public/img/under-construction.png"></v-img>
-                <div class="card-body">
-                    <h4 class="card-title">Ups...</h4>
-                    <p class="card-text">Disculpe las molestias</p>
-                    <a href="../../index.html" class="btn-primary stretched-link"></a>
-                </div>
-            </div>
-
+                <SorryBtn></SorryBtn>
         </div>
     </div>
- 
-    <div class="background-img-container">  
-        <div class="background-img"> 
-        </div>  
-    </div>
-</div>
 
 </template>
 
 <script>
+import SorryBtn from '@/components/SorryBtn.vue'
+
 export default {
-    
+    components: {
+        SorryBtn
+    }
 }
 </script>
 
 <style lang="css">
-
+    .insectos {
+    background-image: url(../../public/img/bg-img-insect.jpg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+  }
+ 
 </style>

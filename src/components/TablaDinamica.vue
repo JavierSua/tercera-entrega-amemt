@@ -1,6 +1,5 @@
 <template>
     <div>
-        <div class="container rounded table-responsive-sm">
             <table class="table table-striped table-dark">
                 <thead>
                     <tr>
@@ -22,7 +21,7 @@
                     </tr>
                 </tbody>
             </table>        
-        </div>
+
     </div>
 </template>
 <script>

@@ -1,12 +1,14 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <Carrusel></Carrusel>
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <TablaDinamica @toggleEditModal="toggleEditModal"></TablaDinamica>
+    <div class="container rounded table-responsive-sm">
+      <Carrusel></Carrusel>
+    </div>
+    <div class="container rounded table-responsive-sm">
+      <TablaDinamica @toggleEditModal="toggleEditModal"></TablaDinamica>
       <button type="button" class="btn btn-primary btnTablaAgregar" @click="toggleModal">
         Agregar
       </button>
+    </div>
     <Modal v-model="$store.state.modalOpen" v-if="$store.state.modalOpen" @toggleModal="toggleModal">
       <template v-slot:modal-header>
                     <h5 class="modal-title" id="exampleModalLabel">Agregar especimen a la tabla</h5>
@@ -70,18 +72,18 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" v-on:click="toggleEditModal">Cancelar</button>
-                        <button type="submit" id="btnTablaModalAgregar" class="btn btn-primary" >Agregar</button>
+                        <button type="submit" id="btnTablaModalAgregar" class="btn btn-primary">Editar</button>
                     </div>
                 </form>
       </template>
     </Modal>
+    <div class="home"></div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import Carrusel from '@/components/Carrusel.vue'
-import HelloWorld from '@/components/HelloWorld.vue'
 import TablaDinamica from '@/components/TablaDinamica.vue'
 import Modal from '@/components/Modal.vue'
 import { mapGetters } from "vuex";
@@ -90,14 +92,17 @@ export default {
   name: 'Home',
   components: {
     Carrusel,
-    HelloWorld,
     TablaDinamica,
     Modal
   },
   data() {
     return {
       tempForm : {
-
+        Nombre: "",
+        Clima: "",
+        Flor: "",
+        Fruta: "",
+        Hojas: "",
       },
       blankForm : {
         Nombre: "",
@@ -120,21 +125,37 @@ export default {
         this.$store.state.editModalOpen= !this.$store.state.editModalOpen;
     },
     submitPlanta(){
+      this.$store.dispatch('progressBarValue')
+      setTimeout(() => {
         const newPlanta = {
-            Nombre: this.tempForm.Nombre,
+          Nombre: this.tempForm.Nombre,
             Clima: this.tempForm.Clima,
             Flor: this.tempForm.Flor,
             Fruta: this.tempForm.Fruta,
             Hojas: this.tempForm.Hojas,
             }
         this.$store.state.plantasArray.push(newPlanta)
-    this.toggleModal()
-    this.tempForm = this.blankForm
+        this.toggleModal()
+        this.tempForm = this.blankForm
+        }, 2000);
     },
     editPlanta(){
-      this.$store.state.plantasArray.splice(this.$store.state.rowToEdit, 1, this.tempForm)
-      this.toggleEditModal()
+      this.$store.dispatch('progressBarValue')
+      setTimeout(() => {
+        this.$store.state.plantasArray.splice(this.$store.state.rowToEdit, 1, this.tempForm)
+        this.toggleEditModal()
+      }, 2000);
+
     }
   },
 }
 </script>
+<style>
+  .home {
+    background-image: url(../../public/img/bg-img-plants.jpg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+  }
+</style>

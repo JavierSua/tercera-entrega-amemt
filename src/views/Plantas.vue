@@ -158,8 +158,6 @@ export default {
 .container{
     background-color: #7ad66880;
     padding: 15px;
-    margin-top: 12px;
-    margin-bottom: 12px;
 }
 
 .table{
@@ -219,7 +217,6 @@ export default {
 
 footer{
     display: block;
-    margin-top: 25px;
     padding: 20px 0;
     background: rgb(17, 17, 17);
 }
