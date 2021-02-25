@@ -14,7 +14,7 @@ import Footer from './components/Footer'
 export default {
   components: {
     NavBar,
-    Footer
+    Footer,
   }
 }
 </script>

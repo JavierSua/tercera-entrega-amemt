@@ -1,8 +1,41 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
+  <div class="home" >
     <Carrusel></Carrusel>
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+       <!-- Tarjetas -->
+       <div class="container rounded">
+        <div class="card-deck">
+            <div class="card btn">
+               <!-- <img class="card-img-top" src="style/img/cactus-250px-Coryphantha_ramillosa.jpg" alt="Coryphantha Ramillosa"> -->
+                 <v-img src="public/img/cactus-250px-Coryphantha_ramillosa.jpg"></v-img>
+                <div class="card-body">
+                    <h5 class="card-title">Cactus</h5>
+                    <p class="card-text">Cactaceae, las cactáceas, son conocidas en conjunto como cactos, cactus o cacti. Esta familia es originaria de América.</p>
+                <!--    <a href="paginas/plantas/suculenta.html" class="btn-primary stretched-link"></a> -->
+                <router-link to="@/componentes/SuculentaDetalles"></router-link>
+                </div>
+            </div>
+            <div class="card btn">
+            <!--    <img class="card-img-top" src="style/img/begonia-1024px-Begonia_plant_14.jpg" alt="Begonia Aconitifolia"> -->
+               <v-img src="public/img/begonia-1024px-Begonia_plant_14.jpg"></v-img>
+                <div class="card-body">
+                    <h5 class="card-title">Begonia</h5>
+                 <p class="card-text">La familia de las begonias (Begoniaceae) es una familia de plantas con dos géneros, procedentes de todas las regiones húmedas tropicales a excepción de Australia y Polinesia.</p>
+         <!--    <a href="paginas/plantas/begonia.html" class="btn-primary stretched-link"></a> -->
+                 <router-link to="@/components/BegoniaDetalles"></router-link>
+             </div>
+            </div>
+            <div class="card btn">
+            <!--    <img class="card-img-top" src="style/img/orquidea-1024px-Labiata.jpg" alt="Cattleya Labiata"> -->
+              <v-img src="public/img/orquidea-1024px-Labiata.jpg"></v-img>
+                <div class="card-body">
+                    <h5 class="card-title">Orquidea</h5>
+                    <p class="card-text">Las orquídeas u orquidáceas (nombre científico Orchidaceae) son una familia de plantas monocotiledóneas que se distinguen por la complejidad de sus flores y por sus interacciones ecológicas con los agentes polinizadores y con los hongos con los que forman micorrizas.</p> 
+               <!--   <a href="paginas/plantas/orquidea.html" class="btn-primary stretched-link"></a> -->
+                      <router-link to="@/components/OrquideaDetalles"></router-link>
+                </div>
+            </div>
+        </div>
+       </div>
     <TablaDinamica @toggleEditModal="toggleEditModal"></TablaDinamica>
       <button type="button" class="btn btn-primary btnTablaAgregar" @click="toggleModal">
         Agregar
@@ -81,7 +114,6 @@
 <script>
 // @ is an alias to /src
 import Carrusel from '@/components/Carrusel.vue'
-import HelloWorld from '@/components/HelloWorld.vue'
 import TablaDinamica from '@/components/TablaDinamica.vue'
 import Modal from '@/components/Modal.vue'
 import { mapGetters } from "vuex";
@@ -90,7 +122,6 @@ export default {
   name: 'Home',
   components: {
     Carrusel,
-    HelloWorld,
     TablaDinamica,
     Modal
   },
