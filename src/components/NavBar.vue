@@ -8,7 +8,6 @@
 						<font-awesome-icon icon="seedling" transform="shrink-8" size="2x"  />
 					</font-awesome-layers>
 				</span> 
-			</a> 
 		</nav> 
 	
 		<nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
