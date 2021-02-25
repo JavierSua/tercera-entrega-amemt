@@ -16,7 +16,7 @@
                         <td v-for="key in keys" :key="key.id">
                             {{planta[key]}}
                         </td>
-                        <button v-on:click="$emit('toggleDeleteModal', $event.target.parentNode.sectionRowIndex)">X</button>  
+                        <button v-on:click="deleteRow($event.target.parentNode.sectionRowIndex)" >X</button>
                         <button v-on:click="$emit('toggleEditModal', $event.target.parentNode.sectionRowIndex)">Editar</button>
                     </tr>
                 </tbody>
@@ -74,7 +74,7 @@ export default {
         },
         applyFilter(filterCol, index){
             if (this.filterInput != ""){
-                this.listPlantas = this.$store.getters.filteredPlantas(filterCol, this.filterInput.charAt(0).toUpperCase() + this.filterInput.slice(1))
+                this.listPlantas = this.$store.getters.filteredPlantas(filterCol, this.filterInput)
             } else {
                 this.listPlantas = this.plantas
             }

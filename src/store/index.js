@@ -8,7 +8,6 @@ export default new Vuex.Store({
     plantasArray: [],
     modalOpen:false,
     editModalOpen:false,
-    deleteModalOpen:false,
     rowToEdit: "",
     progressValue: 0
   },

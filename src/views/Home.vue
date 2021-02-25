@@ -4,7 +4,7 @@
       <Carrusel></Carrusel>
     </div>
     <div class="container rounded table-responsive-sm">
-      <TablaDinamica @toggleEditModal="toggleEditModal"  @toggleDeleteModal="toggleDeleteModal"></TablaDinamica>
+      <TablaDinamica @toggleEditModal="toggleEditModal"></TablaDinamica>
       <button type="button" class="btn btn-primary btnTablaAgregar" @click="toggleModal">
         Agregar
       </button>
@@ -43,7 +43,7 @@
                 </form>
       </template>
     </Modal>
-    <Modal v-model="$store.state.editModalOpen" v-if="$store.state.editModalOpen">
+    <Modal v-model="$store.state.editModalOpen" v-if="$store.state.editModalOpen" @toggleEditModal="toggleEditModal">
       <template v-slot:modal-header>
                     <h5 class="modal-title" id="exampleModalLabel">Editar especimen</h5>
                     <button type="button" class="close" v-on:click="toggleEditModal">
@@ -75,29 +75,6 @@
                         <button type="submit" id="btnTablaModalAgregar" class="btn btn-primary">Editar</button>
                     </div>
                 </form>
-      </template>
-    </Modal>
-    <Modal v-model="$store.state.deleteModalOpen" v-if="$store.state.deleteModalOpen">
-      <template v-slot:modal-header>
-        <h5 class="modal-title" id="exampleModalLabel">Borrar especimen</h5>
-        <button type="button" class="close" v-on:click="toggleDeleteModal">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </template>
-      <template v-slot:form>
-        <form @submit.prevent="borrarPlanta">
-          <div class="modal-body">
-            <div class="container-fluid">
-              <div class="row justify-content-between">
-                Seguro deseea borrar el especimen "{{tempForm.Nombre}}"
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" v-on:click="toggleDeleteModal">Cancelar</button>
-            <button type="submit" id="btnTablaModalAgregar" class="btn btn-primary">Borrar</button>
-          </div>
-        </form>
       </template>
     </Modal>
     <div class="home"></div>
@@ -138,41 +115,24 @@ export default {
   },
   computed: mapGetters(['plantas']),
   methods: {
-    capitalizeFirstLetter(s){
-    return s.charAt(0).toUpperCase() + s.slice(1);
-    },
-    capitalizeTempForm(){
-      this.tempForm = {
-          Nombre: this.capitalizeFirstLetter(this.tempForm.Nombre),
-          Clima: this.capitalizeFirstLetter(this.tempForm.Clima),
-          Flor: this.capitalizeFirstLetter(this.tempForm.Flor),
-          Fruta: this.capitalizeFirstLetter(this.tempForm.Fruta),
-          Hojas: this.capitalizeFirstLetter(this.tempForm.Hojas),
-      }
-    },
     toggleModal(){
-      this.tempForm = this.blankForm
-      this.$store.state.modalOpen= !this.$store.state.modalOpen;
+        this.tempForm = this.blankForm
+        this.$store.state.modalOpen= !this.$store.state.modalOpen;
     },
     toggleEditModal(row){
         this.tempForm = {...this.plantas[row]}
         this.$store.state.rowToEdit = row
         this.$store.state.editModalOpen= !this.$store.state.editModalOpen;
     },
-    toggleDeleteModal(row){
-        this.tempForm = {...this.plantas[row]}
-        this.$store.state.rowToEdit = row
-        this.$store.state.deleteModalOpen= !this.$store.state.deleteModalOpen;
-    },
     submitPlanta(){
       this.$store.dispatch('progressBarValue')
       setTimeout(() => {
         const newPlanta = {
-          Nombre: this.capitalizeFirstLetter(this.tempForm.Nombre),
-            Clima: this.capitalizeFirstLetter(this.tempForm.Clima),
-            Flor: this.capitalizeFirstLetter(this.tempForm.Flor),
-            Fruta: this.capitalizeFirstLetter(this.tempForm.Fruta),
-            Hojas: this.capitalizeFirstLetter(this.tempForm.Hojas),
+          Nombre: this.tempForm.Nombre,
+            Clima: this.tempForm.Clima,
+            Flor: this.tempForm.Flor,
+            Fruta: this.tempForm.Fruta,
+            Hojas: this.tempForm.Hojas,
             }
         this.$store.state.plantasArray.push(newPlanta)
         this.toggleModal()
@@ -182,17 +142,10 @@ export default {
     editPlanta(){
       this.$store.dispatch('progressBarValue')
       setTimeout(() => {
-        this.capitalizeTempForm()
         this.$store.state.plantasArray.splice(this.$store.state.rowToEdit, 1, this.tempForm)
         this.toggleEditModal()
       }, 2000);
-    },
-    borrarPlanta(){
-      this.$store.dispatch('progressBarValue')
-      setTimeout(() => {
-        this.$store.state.plantasArray.splice(this.$store.state.rowToEdit,1)
-        this.toggleDeleteModal()
-      }, 2000);
+
     }
   },
 }
