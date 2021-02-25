@@ -43,5 +43,20 @@ export default {
 .carousel-caption{
     background-color: rgb(0, 0, 0, 0.7)
 }
+.container{
+    background-color: #7ad66880;
+    padding: 15px;
+}
 
+.container-footer{ 
+    font-size: 15px;
+    background-color: rgb(17, 17, 17);
+}
+.bg-text{
+    background-color: #afc8af!important;
+    overflow: auto;
+}
+.bg-text .col-12{
+    font-size: 1.1rem;
+}
 </style>

@@ -4,6 +4,32 @@
       <Carrusel></Carrusel>
     </div>
     <div class="container rounded table-responsive-sm">
+    <div>
+      <b-card-group deck>
+        <b-card title="Cactus" img-src="https://picsum.photos/300/300/?image=45" img-alt="Image" img-top>
+          <b-card-text>
+            Cactaceae, las cactáceas, son conocidas en conjunto como cactos, cactus o cacti. Esta familia es originaria de América.
+          </b-card-text>
+          <router-link to="/Suculenta" class="stretched-link"></router-link>
+        </b-card>
+
+        <b-card title="Begonia" img-src="https://picsum.photos/300/300/?image=41" img-alt="Image" img-top>
+          <b-card-text>
+            La familia de las begonias (Begoniaceae) es una familia de plantas con dos géneros, procedentes de todas las regiones húmedas tropicales a excepción de Australia y Polinesia.
+          </b-card-text>
+          <router-link to="/Begonia" class="stretched-link"></router-link>
+        </b-card>
+
+        <b-card title="Orquidea" img-src="https://picsum.photos/300/300/?image=42" img-alt="Image" img-top>
+          <b-card-text>
+            Las orquídeas u orquidáceas (nombre científico Orchidaceae) son una familia de plantas monocotiledóneas que se distinguen por la complejidad de sus flores y por sus interacciones ecológicas con los agentes polinizadores y con los hongos con los que forman micorrizas.
+          </b-card-text>
+          <router-link to="/Orquidea" class="stretched-link"></router-link>
+        </b-card>
+      </b-card-group>
+    </div>
+    </div>
+    <div class="container rounded table-responsive-sm">
       <TablaDinamica @toggleEditModal="toggleEditModal"></TablaDinamica>
       <button type="button" class="btn btn-primary btnTablaAgregar" @click="toggleModal">
         Agregar
